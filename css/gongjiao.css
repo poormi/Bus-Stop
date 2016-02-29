@@ -1,0 +1,61 @@
+.ui-header{background-color: #0A5993;}
+.ui-header .ui-btn-inner{font-size: 50%;font-weight: normal;border: none;}
+.ui-header h1.title {font-size: 120%;text-align: center;margin: 0 0 -10px;font-weight: normal;line-height:90%;}
+.ui-btn-up-a{border: none;background: #095994;}
+.ui-btn-hover-a{border: none;background: #4788c8;}
+.ui-icon{background-image:none;}
+.header{padding: .5em;padding-left:0;}.header td{padding-left:.2em;}
+.ui-btn-inner,.ui-li .ui-btn-text a.ui-link-inherit{white-space:normal;border-top-width: 0;}
+.vertical li{float: left;width: 1.2em;height: auto;overflow:hidden;border:1px solid transparent;}
+.vertical .ui-btn-inner{font-size: 45%;text-align: center;}
+.vertical .ui-btn-text a.ui-link-inherit{width: 1.1em;padding: .4em 0 .4em 0;margin-left:.7em;color: #000;}
+.vertical li.focus{border-color: rgba(255,255,255,.2)}
+.road{font-size: 50%; font-weight: normal;padding: .3em .4em;background-color: #044D84;}
+.bus-station{margin: 0;line-height: 110%;font-size: 55%;font-weight: normal;height:2.2em;}
+.busInfo{font-size: 36%;font-weight: normal;margin-top: 0;margin-bottom: 0;}
+div.ui-mobile-viewport{overflow-x:visible;}
+.ui-mobile .ui-page{z-index: -100;}
+ /* flip the pane when hovered */
+        .flip-container.hover .flipper, .flip-container.hover .flipper {
+            -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+        }
+
+        .flip-container, .front, .back {
+            background-color: rgba(0,0,0,.05);
+        }
+        /* entire container, keeps perspective */
+        .flip-container {
+            -webkit-perspective: 1000;
+            perspective: 1000;
+        }
+
+        /* flip speed goes here */
+        .flipper {
+            -webkit-transition: 0.6s;
+            -webkit-transform-style: preserve-3d;
+            transition: 0.6s;
+            transform-style: preserve-3d;
+            position: relative;height: 100%;
+        }
+
+        /* hide back of pane during swap */
+        .front, .back {
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+
+        /* front pane, placed above back */
+        .front {
+            z-index: 2;
+        }
+
+        /* back, initially hidden pane */
+        .back {
+            -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+        }

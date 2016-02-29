@@ -1,0 +1,67 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+ <title>公交线路查询</title>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">  
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile.structure-1.3.2.min.css" />
+<link rel="stylesheet" href="css/list.min.css" />
+<link rel="stylesheet" href="css/base.css" />
+<link rel="stylesheet" href="css/gongjiao.css" />
+<script type="text/javascript">
+var query = '${query}';
+
+var cityName = "合肥";
+var lineStr = "";
+</script>
+</head>
+<body class="flip-container" onkeyDown="return handleKeyDown()" onkeyUp="return false;">
+<div class="flipper">
+<div id="one" class="front">
+  <div data-role="header">  
+      <input type="hidden" id="city" value="${parseresult["result"][0]["output_info"].get("City","")}" />
+      <table class="header" width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td align="center" valign="top"><h1 class="title"><span id="line">665</span></h1><span class="road">路</span></td>
+          <td valign="top" width="60%">
+            <h2 class="bus-station"><span class="first_station"></span><span style="font-size: 160%;margin: 0 .1em">→</span><span class="last_station"></span></h2>
+            <p class="busInfo"></p>
+          </td>
+          <td><a url="#two" href="javascript:" data-role="button" onclick="changePage(this);" style="background-color:rgba(255,255,255,.1);" data-corners="false">⇋ 返程</a></td>
+        </tr>
+      </table>          
+  </div><!-- /header -->
+ <div class="wrapper" data-role="content" style="position: relative;clear:both;">
+   <div class="listBody">
+    <ul class="listView vertical" id="list1"  data-role="listview"></ul>
+  </div>
+ </div>
+</div>
+<div id="two" class="back" style="display: none;">
+  <div data-role="header">
+      <table class="header" width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td align="center" valign="top"><h1 class="title"><span>665</span></h1><span class="road">路</span></td>
+          <td valign="top" width="60%">
+            <h2 class="bus-station"><span class="first_station"></span><span style="font-size: 160%;margin: 0 .1em">→</span><span class="last_station"></span></h2>
+            <p class="busInfo"></p>
+          </td>
+          <td><a url="#one" href="javascript:" data-role="button" onclick="changePage(this);" style="background-color:rgba(255,255,255,.1);" data-corners="false">⇋ 返程</a></td>
+        </tr>
+      </table>          
+  </div><!-- /header -->
+ <div class="wrapper" data-role="content" style="position: relative;clear:both;">
+  <div class="listBody">
+   <ul class="listView vertical" id="list2"  data-role="listview"></ul>
+ </div>
+</div>
+<div data-role="popup" id="popupInfo" class="ui-content" data-transition="" data-theme="a" style="max-width:350px;font-size: 50%;">
+          <p>没有查询到该站点的信息</p>
+</div>
+</div>
+</div>
+</body>
+</html>
+<script src="js/jquery-1.8.3.min.js"></script>
+<script src="js/jquery.mobile-1.2.1.min.js"></script>
+<script type="text/javascript" src="js/gongjiao.js"></script>
